@@ -116,6 +116,38 @@ const initThreeJS = () => {
     const particles = new THREE.Points(geometry, pMaterial);
     scene.add(particles);
 
+    // AI Core Sphere
+    const sphereGeometry = new THREE.SphereGeometry(250, 32, 32);
+    const sphereMaterial = new THREE.MeshBasicMaterial({
+        color: 0x0a165e,
+        transparent: true,
+        opacity: 0.4,
+        wireframe: true
+    });
+    const coreSphere = new THREE.Mesh(sphereGeometry, sphereMaterial);
+    scene.add(coreSphere);
+
+    // Inner Glowing Core
+    const innerSphereGeo = new THREE.SphereGeometry(150, 32, 32);
+    const innerSphereMat = new THREE.MeshBasicMaterial({
+        color: 0x2b4dff,
+        transparent: true,
+        opacity: 0.8
+    });
+    const innerSphere = new THREE.Mesh(innerSphereGeo, innerSphereMat);
+    scene.add(innerSphere);
+
+    // Core Glow
+    const glowGeometry = new THREE.SphereGeometry(300, 32, 32);
+    const glowMaterial = new THREE.MeshBasicMaterial({
+        color: 0x2b4dff,
+        transparent: true,
+        opacity: 0.1,
+        blending: THREE.AdditiveBlending
+    });
+    const glowSphere = new THREE.Mesh(glowGeometry, glowMaterial);
+    scene.add(glowSphere);
+
     // Lines for connections
     const lineGeometry = new THREE.BufferGeometry();
     const maxLines = (particleCount * (particleCount - 1)) / 2;
@@ -233,6 +265,14 @@ const initThreeJS = () => {
 
         // Slow rotation of entire scene
         scene.rotation.y += 0.001;
+        coreSphere.rotation.x += 0.002;
+        coreSphere.rotation.y += 0.003;
+        innerSphere.rotation.y -= 0.005;
+
+        // Pulsing glow
+        const time = Date.now() * 0.001;
+        glowSphere.scale.setScalar(1 + Math.sin(time * 2) * 0.05);
+        innerSphereMaterial = Math.sin(time) * 0.2 + 0.8;
 
         renderer.render(scene, camera);
     };
@@ -247,5 +287,39 @@ const initThreeJS = () => {
     });
 };
 
+// Magnetic Buttons
+const initMagneticButtons = () => {
+    const buttons = document.querySelectorAll('.btn-primary');
+    
+    buttons.forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            // Calculate distance from center
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+            
+            btn.style.transform = `translate(${deltaX * 10}px, ${deltaY * 10}px)`;
+        });
+        
+        btn.addEventListener('mouseleave', () => {
+            btn.style.transform = '';
+            btn.style.transition = 'transform 0.3s ease';
+        });
+        
+        btn.addEventListener('mouseenter', () => {
+            btn.style.transition = 'transform 0.1s ease';
+        });
+    });
+};
+
 // Initialize after load to ensure Three.js is ready
-window.addEventListener('load', initThreeJS);
+window.addEventListener('load', () => {
+    initThreeJS();
+    initMagneticButtons();
+});
