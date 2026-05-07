@@ -130,13 +130,33 @@ const initThreeJS = () => {
     geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3).setUsage(THREE.DynamicDrawUsage));
     geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
 
+    // Create a circular texture programmatically
+    const canvasTexture = document.createElement('canvas');
+    canvasTexture.width = 32;
+    canvasTexture.height = 32;
+    const context = canvasTexture.getContext('2d');
+    
+    const gradient = context.createRadialGradient(16, 16, 0, 16, 16, 16);
+    gradient.addColorStop(0, 'rgba(255,255,255,1)');
+    gradient.addColorStop(0.5, 'rgba(255,255,255,0.8)');
+    gradient.addColorStop(1, 'rgba(255,255,255,0)');
+    
+    context.fillStyle = gradient;
+    context.beginPath();
+    context.arc(16, 16, 16, 0, Math.PI * 2);
+    context.fill();
+    
+    const particleTexture = new THREE.CanvasTexture(canvasTexture);
+
     // Particle Material
     const pMaterial = new THREE.PointsMaterial({
-        size: 5,
+        size: 8, // Increased size slightly to account for smooth edges
+        map: particleTexture,
         vertexColors: true,
         blending: THREE.AdditiveBlending,
         transparent: true,
-        opacity: 0.8
+        opacity: 0.8,
+        depthWrite: false
     });
 
     const particles = new THREE.Points(geometry, pMaterial);
