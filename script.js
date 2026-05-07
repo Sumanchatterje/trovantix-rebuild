@@ -339,7 +339,7 @@ const initThreeJS = () => {
         
         // Update lines and particles visibility
         // Normal blending is required in light mode so colors don't wash out to white
-        lineMaterial.opacity = isDark ? 0.35 : 0.6;
+        lineMaterial.opacity = isDark ? 0.35 : 0.0; // Hide lines entirely in light mode
         lineMaterial.blending = isDark ? THREE.AdditiveBlending : THREE.NormalBlending;
         
         pMaterial.opacity = isDark ? 0.8 : 1.0;
