@@ -174,10 +174,14 @@ a {
 }
 
 #navbar.scrolled {
-    background: rgba(3, 8, 38, 0.85);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     padding: 1rem 0;
     border-bottom: 1px solid var(--glass-border);
+}
+
+[data-theme="dark"] #navbar.scrolled {
+    background: rgba(3, 8, 38, 0.85);
 }
 
 .nav-container {
@@ -668,7 +672,7 @@ a {
     color: var(--clr-text);
 }
 
-.footer p, .footer a {
+.footer p, .footer a:not(.btn) {
     color: var(--clr-text-muted);
 }
 
