@@ -38,16 +38,44 @@ document.querySelector('.hamburger').addEventListener('click', () => {
     }
 });
 
+// Theme Toggle Logic
+const themeToggle = document.getElementById('theme-toggle');
+const rootElement = document.documentElement;
+
+// Check for saved theme preference or system preference
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+    rootElement.setAttribute('data-theme', savedTheme);
+} else {
+    // Default to light mode as requested
+    rootElement.setAttribute('data-theme', 'light');
+}
+
+themeToggle.addEventListener('click', () => {
+    let currentTheme = rootElement.getAttribute('data-theme');
+    let newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    rootElement.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    
+    // Update Three.js if initialized
+    if (window.updateThreeJSTheme) {
+        window.updateThreeJSTheme(newTheme);
+    }
+});
+
 // --------------------------------------------------------
 // Three.js 3D Background Animation (Particles Network)
 // --------------------------------------------------------
 const initThreeJS = () => {
     const canvas = document.getElementById('bg-canvas');
     if (!canvas) return;
+    
+    const isDarkMode = document.documentElement.getAttribute('data-theme') === 'dark';
 
     // Scene setup
     const scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x030826, 0.001);
+    scene.fog = new THREE.FogExp2(isDarkMode ? 0x030826 : 0xf8fafc, 0.001);
 
     // Camera setup
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 2000);
@@ -89,12 +117,18 @@ const initThreeJS = () => {
             numConnections: 0
         });
 
-        // Colors
+        // Colors based on theme
         let mixedColor;
         const rand = Math.random();
-        if(rand < 0.3) mixedColor = colorDark;
-        else if (rand < 0.8) mixedColor = colorBright;
-        else mixedColor = colorWhite;
+        
+        // Use darker colors for particles in light mode so they are visible
+        const colorPrimaryDark = isDarkMode ? colorDark : new THREE.Color(0x1e293b); 
+        const colorPrimaryBright = isDarkMode ? colorBright : new THREE.Color(0x2b4dff);
+        const colorAccent = isDarkMode ? colorWhite : new THREE.Color(0x0a165e);
+
+        if(rand < 0.3) mixedColor = colorPrimaryDark;
+        else if (rand < 0.8) mixedColor = colorPrimaryBright;
+        else mixedColor = colorAccent;
 
         colors[i * 3] = mixedColor.r;
         colors[i * 3 + 1] = mixedColor.g;
@@ -285,6 +319,18 @@ const initThreeJS = () => {
         camera.updateProjectionMatrix();
         renderer.setSize(window.innerWidth, window.innerHeight);
     });
+    
+    // Function to update theme without reloading
+    window.updateThreeJSTheme = (theme) => {
+        const isDark = theme === 'dark';
+        scene.fog.color.setHex(isDark ? 0x030826 : 0xf8fafc);
+        
+        // Update lines
+        lineMaterial.opacity = isDark ? 0.15 : 0.05;
+        
+        // Since we randomize particle colors, a full refresh is complex. 
+        // Changing the fog and lines opacity handles the majority of the background adaptation.
+    };
 };
 
 // Magnetic Buttons
