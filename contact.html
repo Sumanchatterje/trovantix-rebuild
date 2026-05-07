@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Trovantix</title>
+    <meta name="description" content="Get in touch with Trovantix for your AI needs.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="contact-page">
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                Trovantix
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html#home">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#why-trovantix">Why Us</a></li>
+                <li><a href="contact.html" class="btn btn-primary nav-btn">Contact Us</a></li>
+            </ul>
+            <div class="nav-controls">
+                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fa-solid fa-moon dark-icon"></i>
+                    <i class="fa-solid fa-sun light-icon"></i>
+                </button>
+                <div class="hamburger">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="contact-header">
+                <h1 class="section-title contact-title">Contact</h1>
+                <div class="cyan-underline"></div>
+                <p class="contact-subtitle">Ready to discuss adopting AI with purpose, efficiency, and security? Get in touch with our team.</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Left: Form -->
+                <div class="contact-form-wrapper glass-panel">
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="name" name="name" placeholder="Your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="company">Company Name</label>
+                            <input type="text" id="company" name="company" placeholder="Your company">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message <span class="required">*</span></label>
+                            <textarea id="message" name="message" rows="4" placeholder="Tell us about your AI goals and challenges..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-cyan submit-btn">Send Message</button>
+                    </form>
+                </div>
+
+                <!-- Right: Info Cards -->
+                <div class="contact-info-wrapper">
+                    <div class="info-card glass-panel">
+                        <h3 class="info-title">Trovantix</h3>
+                        
+                        <div class="info-block">
+                            <h4 class="info-subtitle">ADDRESS</h4>
+                            <p class="info-text">199 Rexdale Blvd<br>Toronto, ON M9W 1P7<br>Canada</p>
+                        </div>
+                        
+                        <div class="info-block">
+                            <h4 class="info-subtitle">OUR FOCUS</h4>
+                            <ul class="focus-list">
+                                <li><i class="fa-solid fa-arrow-right"></i> AI Strategy & Implementation</li>
+                                <li><i class="fa-solid fa-arrow-right"></i> Workflow Automation</li>
+                                <li><i class="fa-solid fa-arrow-right"></i> Secure AI Adoption</li>
+                                <li><i class="fa-solid fa-arrow-right"></i> Managed Services</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="cta-card glass-panel">
+                        <p class="cta-text">Let's discuss how AI can work for your business.</p>
+                        <a href="#" class="btn btn-cyan-outline cta-btn">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="index.html" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                        Trovantix
+                    </a>
+                    <p>Ready to discuss adopting AI with purpose, efficiency, and security? Get in touch with our team.</p>
+                    <a href="mailto:info@trovantix.com" class="btn btn-primary footer-btn">Get in Touch</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Focus</h4>
+                    <ul>
+                        <li><a href="index.html#services"><i class="fa-solid fa-arrow-right"></i> AI Strategy & Implementation</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-arrow-right"></i> Workflow Automation</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-arrow-right"></i> Secure AI Adoption</a></li>
+                        <li><a href="index.html#services"><i class="fa-solid fa-arrow-right"></i> Managed Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Address</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> 199 Rexdale Blvd<br>Toronto, ON M9W 1P7<br>Canada</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Trovantix — Full-Service AI</p>
+                <p>&copy; 2026 Trovantix. All rights reserved.</p>
+                <div></div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

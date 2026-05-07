@@ -23,18 +23,10 @@ window.addEventListener('scroll', () => {
 // Mobile menu toggle
 document.querySelector('.hamburger').addEventListener('click', () => {
     const navLinks = document.querySelector('.nav-links');
-    if (navLinks.style.display === 'flex') {
-        navLinks.style.display = 'none';
+    if (navLinks.classList.contains('active')) {
+        navLinks.classList.remove('active');
     } else {
-        navLinks.style.display = 'flex';
-        navLinks.style.flexDirection = 'column';
-        navLinks.style.position = 'absolute';
-        navLinks.style.top = '100%';
-        navLinks.style.left = '0';
-        navLinks.style.width = '100%';
-        navLinks.style.background = 'rgba(3, 8, 38, 0.95)';
-        navLinks.style.padding = '2rem 0';
-        navLinks.style.borderBottom = '1px solid rgba(43, 77, 255, 0.2)';
+        navLinks.classList.add('active');
     }
 });
 
