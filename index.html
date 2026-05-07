@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trovantix | AI That Works. Securely. At Scale.</title>
+    <meta name="description" content="Designing, implementing, and supporting practical AI solutions that deliver measurable business value.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="logo">
+                <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                Trovantix
+            </a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#why-trovantix">Why Us</a></li>
+                <li><a href="#contact" class="btn btn-primary nav-btn">Contact Us</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="badge">Future-Ready Solutions</div>
+            <h1 class="hero-title">AI That Works. <span class="highlight">Securely.</span> At Scale.</h1>
+            <p class="hero-subtitle">Designing, implementing, and supporting practical AI solutions that deliver measurable business value.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary btn-large">Book a Consultation <i class="fa-solid fa-arrow-right"></i></a>
+                <a href="#services" class="btn btn-secondary btn-large">Explore Services</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about section-padding">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2 class="section-title">Future-ready AI for modern business</h2>
+                    <p>Trovantix is focused on intelligent automation, implementation expertise, and security-conscious thinking to make AI practical, effective, and business-ready.</p>
+                    <p>We understand that AI is not a one-size-fits-all solution. Every business has unique challenges, workflows, and security requirements. Our team works closely with you to understand your goals, assess your current infrastructure, and design AI implementations that align with your business objectives and risk profile.</p>
+                    <p>Whether you're just beginning your AI journey or looking to scale existing initiatives, Trovantix provides the strategic guidance, hands-on implementation, and ongoing support needed to ensure your AI investments deliver real, measurable value.</p>
+                    <div class="security-banner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <div>
+                            <h4>Security-First Approach</h4>
+                            <p>Every solution designed with security and compliance at its core.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image-wrapper">
+                    <!-- We use the generated image here -->
+                    <div class="glass-panel image-panel">
+                        <img src="/home/suman/.gemini/antigravity/brain/fbfd6656-ef7a-4221-a776-4f7b0653ed21/hero_bg_abstract_1778144363958.png" alt="AI Neural Network Visualization" class="floating-img" onerror="this.src='https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1000&auto=format&fit=crop'">
+                        <div class="panel-glow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services section-padding">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive AI solutions tailored for enterprise success.</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                    <h3>AI Strategy & Implementation</h3>
+                    <p>Design and deploy AI solutions tailored to your business goals, infrastructure, and competitive landscape.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check"></i> Strategic roadmap development</li>
+                        <li><i class="fa-solid fa-check"></i> Custom AI architecture</li>
+                        <li><i class="fa-solid fa-check"></i> End-to-end implementation</li>
+                        <li><i class="fa-solid fa-check"></i> ROI measurement</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-gears"></i></div>
+                    <h3>Workflow Automation</h3>
+                    <p>Streamline operations and reduce manual work through intelligent automation of repetitive processes.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check"></i> Process analysis</li>
+                        <li><i class="fa-solid fa-check"></i> AI and RPA integration</li>
+                        <li><i class="fa-solid fa-check"></i> System interconnectivity</li>
+                        <li><i class="fa-solid fa-check"></i> Continuous monitoring</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>Managed Services</h3>
+                    <p>Ongoing support and management of your AI systems to ensure optimal performance and reliability.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check"></i> 24/7 monitoring</li>
+                        <li><i class="fa-solid fa-check"></i> Model performance tuning</li>
+                        <li><i class="fa-solid fa-check"></i> Regular updates</li>
+                        <li><i class="fa-solid fa-check"></i> Scalable infrastructure</li>
+                    </ul>
+                </div>
+
+                <div class="service-card glass-panel">
+                    <div class="service-icon"><i class="fa-solid fa-lock"></i></div>
+                    <h3>Cybersecurity & AI</h3>
+                    <p>Implement AI solutions with security and compliance as core pillars, not afterthoughts.</p>
+                    <ul class="service-list">
+                        <li><i class="fa-solid fa-check"></i> Security-first architecture</li>
+                        <li><i class="fa-solid fa-check"></i> Compliance management</li>
+                        <li><i class="fa-solid fa-check"></i> Data privacy implementation</li>
+                        <li><i class="fa-solid fa-check"></i> Threat assessment</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="why-trovantix" class="why-us section-padding">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Trovantix</h2>
+                <p class="section-subtitle">We deliver AI solutions that are practical, secure, and designed for measurable business impact. Here's what sets us apart:</p>
+            </div>
+            
+            <div class="features-list">
+                <div class="feature-item reveal-up">
+                    <div class="feature-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <div class="feature-content">
+                        <h4>Practical business-focused AI solutions</h4>
+                        <p>AI that solves real business problems, not solutions looking for problems.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-up" style="transition-delay: 100ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="feature-content">
+                        <h4>Faster and more efficient operations</h4>
+                        <p>Streamline workflows and reduce costs through intelligent automation.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-up" style="transition-delay: 200ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-shield-virus"></i></div>
+                    <div class="feature-content">
+                        <h4>Security-aware implementation</h4>
+                        <p>Security and compliance built in from day one, not added later.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-up" style="transition-delay: 300ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+                    <div class="feature-content">
+                        <h4>Scalable support for growth</h4>
+                        <p>Solutions that grow with your business, adapting to changing needs.</p>
+                    </div>
+                </div>
+                <div class="feature-item reveal-up" style="transition-delay: 400ms;">
+                    <div class="feature-icon"><i class="fa-solid fa-handshake"></i></div>
+                    <div class="feature-content">
+                        <h4>Clear professional delivery</h4>
+                        <p>Transparent timelines, measurable outcomes, and dedicated partnership.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta section-padding">
+        <div class="container">
+            <div class="cta-box glass-panel">
+                <h2 class="section-title">Build Your Next Advantage with Trovantix</h2>
+                <p>Partner with us to adopt AI with confidence, efficiency, and security built in.</p>
+                <a href="#contact" class="btn btn-primary btn-large cta-btn">Schedule a Discussion</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <a href="#home" class="logo footer-logo">
+                        <span class="logo-icon"><i class="fa-solid fa-brain"></i></span>
+                        Trovantix
+                    </a>
+                    <p>Ready to discuss adopting AI with purpose, efficiency, and security? Get in touch with our team.</p>
+                    <a href="mailto:info@trovantix.com" class="btn btn-primary footer-btn">Get in Touch</a>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Our Focus</h4>
+                    <ul>
+                        <li><a href="#services"><i class="fa-solid fa-arrow-right"></i> AI Strategy & Implementation</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-arrow-right"></i> Workflow Automation</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-arrow-right"></i> Secure AI Adoption</a></li>
+                        <li><a href="#services"><i class="fa-solid fa-arrow-right"></i> Managed Services</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-contact">
+                    <h4>Address</h4>
+                    <p><i class="fa-solid fa-location-dot"></i> 199 Rexdale Blvd<br>Toronto, ON M9W 1P7<br>Canada</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>Trovantix — Full-Service AI</p>
+                <p>&copy; 2026 Trovantix. All rights reserved.</p>
+                <p><a href="https://www.b12.io/" target="_blank" class="b12-link">💜 Built with B12</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
