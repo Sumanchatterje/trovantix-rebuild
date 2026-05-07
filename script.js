@@ -207,7 +207,7 @@ const initThreeJS = () => {
         vertexColors: true,
         blending: THREE.AdditiveBlending,
         transparent: true,
-        opacity: 0.15
+        opacity: 0.35 // Increased default opacity
     });
 
     const linesMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
@@ -337,11 +337,13 @@ const initThreeJS = () => {
         const isDark = theme === 'dark';
         scene.fog.color.setHex(isDark ? 0x030826 : 0xf8fafc);
         
-        // Update lines
-        lineMaterial.opacity = isDark ? 0.15 : 0.05;
+        // Update lines and particles visibility
+        // Normal blending is required in light mode so colors don't wash out to white
+        lineMaterial.opacity = isDark ? 0.35 : 0.6;
+        lineMaterial.blending = isDark ? THREE.AdditiveBlending : THREE.NormalBlending;
         
-        // Since we randomize particle colors, a full refresh is complex. 
-        // Changing the fog and lines opacity handles the majority of the background adaptation.
+        pMaterial.opacity = isDark ? 0.8 : 1.0;
+        pMaterial.blending = isDark ? THREE.AdditiveBlending : THREE.NormalBlending;
     };
 };
 
