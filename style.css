@@ -850,7 +850,7 @@ a {
 .cyan-underline {
     width: 60px;
     height: 4px;
-    background: #00d2ff; /* Cyan from image */
+    background: #2b4dff; /* Theme primary bright */
     margin-bottom: 1.5rem;
 }
 
@@ -886,7 +886,7 @@ a {
 }
 
 .required {
-    color: #00d2ff;
+    color: #2b4dff;
 }
 
 .form-group input,
@@ -912,7 +912,7 @@ a {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #00d2ff;
+    border-color: #2b4dff;
     background: rgba(30, 41, 59, 0.8);
 }
 
@@ -931,24 +931,7 @@ a {
     color: rgba(0,0,0,0.4);
 }
 
-.btn-cyan {
-    background: #00d2ff;
-    color: #000;
-    width: 100%;
-    text-align: center;
-    border: none;
-    padding: 1rem 2rem;
-    font-weight: 700;
-    font-size: 1.1rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-}
 
-.btn-cyan:hover {
-    background: #00b8e6;
-    transform: translateY(-2px);
-}
 
 /* Right Side Cards */
 .contact-info-wrapper {
@@ -1001,7 +984,7 @@ a {
 }
 
 .focus-list li i {
-    color: #00d2ff;
+    color: #2b4dff;
     font-size: 0.8rem;
 }
 
@@ -1011,21 +994,7 @@ a {
     margin-bottom: 1.5rem;
 }
 
-.btn-cyan-outline {
-    display: inline-block;
-    background: #00d2ff;
-    color: #000;
-    text-align: center;
-    padding: 0.8rem 1.5rem;
-    font-weight: 600;
-    border-radius: 8px;
-    transition: all 0.3s ease;
-    text-decoration: none;
-}
 
-.btn-cyan-outline:hover {
-    background: #00b8e6;
-}
 
 @media (max-width: 992px) {
     .contact-grid {
